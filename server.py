@@ -13,6 +13,11 @@ users = {}
 def index():
     return 'Сервер працює!'
 
+@socketio.on('ok')
+def control_Ok():
+    print('Загрузка...')
+    send('\n\n\n\n\n\n\n\nЗагрузка завершена :3')
+
 @socketio.on('connect')
 def handle_connect():
     print(f"[ПІДКЛЮЧЕННЯ] Клієнт: {request.sid}")
